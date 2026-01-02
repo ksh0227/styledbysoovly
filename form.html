@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Started | Styled by Soovly</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-cream: #F9F7F4;
+            --color-warm-white: #FFFEFB;
+            --color-charcoal: #2C2C2C;
+            --color-sage: #8B9A7D;
+            --color-sage-light: #A8B89A;
+            --color-taupe: #9C8E84;
+            --color-text: #3D3D3D;
+            --color-text-light: #6B6B6B;
+            --color-error: #C45E5E;
+            --font-display: 'Cormorant Garamond', Georgia, serif;
+            --font-body: 'Outfit', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            font-weight: 300;
+            background-color: var(--color-cream);
+            color: var(--color-text);
+            line-height: 1.7;
+            font-size: 16px;
+        }
+
+        .container {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        header {
+            padding: 40px 0;
+            border-bottom: 1px solid rgba(0,0,0,0.06);
+        }
+
+        header .container {
+            max-width: 1100px;
+        }
+
+        .logo {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: var(--color-charcoal);
+            letter-spacing: 0.02em;
+            text-decoration: none;
+        }
+
+        .form-section {
+            padding: 80px 0 120px;
+        }
+
+        .form-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .form-header h1 {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            font-weight: 400;
+            color: var(--color-charcoal);
+            margin-bottom: 16px;
+        }
+
+        .form-header p {
+            color: var(--color-text-light);
+        }
+
+        .intake-form {
+            background-color: var(--color-warm-white);
+            border: 1px solid rgba(0,0,0,0.06);
+            padding: 50px;
+        }
+
+        .form-group {
+            margin-bottom: 32px;
+        }
+
+        .form-group:last-of-type {
+            margin-bottom: 40px;
+        }
+
+        label {
+            display: block;
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--color-charcoal);
+            margin-bottom: 10px;
+        }
+
+        label span {
+            font-family: var(--font-body);
+            font-size: 0.85rem;
+            font-weight: 300;
+            color: var(--color-text-light);
+            display: block;
+            margin-top: 4px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 14px 16px;
+            font-family: var(--font-body);
+            font-size: 1rem;
+            font-weight: 300;
+            color: var(--color-text);
+            background-color: var(--color-cream);
+            border: 1px solid rgba(0,0,0,0.1);
+            transition: border-color 0.2s ease, background-color 0.2s ease;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: var(--color-sage);
+            background-color: var(--color-warm-white);
+        }
+
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        select {
+            cursor: pointer;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236B6B6B' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 16px center;
+        }
+
+        .file-upload {
+            position: relative;
+        }
+
+        .file-upload input[type="file"] {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        .file-upload-label {
+            display: block;
+            padding: 40px 20px;
+            background-color: var(--color-cream);
+            border: 2px dashed rgba(0,0,0,0.12);
+            text-align: center;
+            color: var(--color-text-light);
+            transition: border-color 0.2s ease, background-color 0.2s ease;
+        }
+
+        .file-upload:hover .file-upload-label {
+            border-color: var(--color-sage);
+            background-color: var(--color-warm-white);
+        }
+
+        .file-upload-label strong {
+            display: block;
+            color: var(--color-charcoal);
+            font-weight: 400;
+            margin-bottom: 4px;
+        }
+
+        .file-names {
+            margin-top: 12px;
+            font-size: 0.9rem;
+            color: var(--color-sage);
+        }
+
+        .submit-button {
+            width: 100%;
+            padding: 18px 40px;
+            background-color: var(--color-charcoal);
+            color: var(--color-warm-white);
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            font-weight: 400;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .submit-button:hover {
+            background-color: var(--color-sage);
+        }
+
+        .form-note {
+            margin-top: 24px;
+            padding: 20px 24px;
+            background-color: var(--color-cream);
+            font-size: 0.9rem;
+            color: var(--color-text-light);
+            text-align: center;
+        }
+
+        /* Confirmation State */
+        .confirmation {
+            display: none;
+            text-align: center;
+            padding: 60px 40px;
+            background-color: var(--color-warm-white);
+            border: 1px solid rgba(0,0,0,0.06);
+        }
+
+        .confirmation.active {
+            display: block;
+        }
+
+        .intake-form.hidden {
+            display: none;
+        }
+
+        .confirmation h2 {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            font-weight: 400;
+            color: var(--color-charcoal);
+            margin-bottom: 20px;
+        }
+
+        .confirmation p {
+            color: var(--color-text-light);
+            margin-bottom: 16px;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .confirmation .important {
+            color: var(--color-text);
+            font-weight: 400;
+            margin: 32px 0;
+            padding: 24px;
+            background-color: var(--color-cream);
+        }
+
+        .payment-button {
+            display: inline-block;
+            padding: 18px 48px;
+            background-color: var(--color-sage);
+            color: var(--color-warm-white);
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            font-weight: 400;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+            margin-top: 16px;
+        }
+
+        .payment-button:hover {
+            background-color: var(--color-charcoal);
+        }
+
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid rgba(0,0,0,0.06);
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 0.85rem;
+            color: var(--color-text-light);
+        }
+
+        @media (max-width: 600px) {
+            .intake-form,
+            .confirmation {
+                padding: 32px 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">Styled by Soovly</a>
+        </div>
+    </header>
+
+    <section class="form-section">
+        <div class="container">
+            <div class="form-header">
+                <h1>Let's get started</h1>
+                <p>Tell me about your space and what you're hoping to achieve.</p>
+            </div>
+
+            <form class="intake-form" id="intakeForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="name">Your name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email address</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="room">Which room are you styling?</label>
+                    <select id="room" name="room" required>
+                        <option value="" disabled selected>Select a room</option>
+                        <option value="living-room">Living room</option>
+                        <option value="bedroom">Bedroom</option>
+                        <option value="dining-room">Dining room</option>
+                        <option value="home-office">Home office</option>
+                        <option value="kitchen">Kitchen</option>
+                        <option value="bathroom">Bathroom</option>
+                        <option value="nursery">Nursery or kids room</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="budget">
+                        What's your budget for new items?
+                        <span>A rough range is fine.</span>
+                    </label>
+                    <select id="budget" name="budget" required>
+                        <option value="" disabled selected>Select a range</option>
+                        <option value="under-500">Under $500</option>
+                        <option value="500-1000">$500 – $1,000</option>
+                        <option value="1000-2500">$1,000 – $2,500</option>
+                        <option value="2500-5000">$2,500 – $5,000</option>
+                        <option value="5000-plus">$5,000+</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="working">
+                        What's working in the space?
+                        <span>Pieces you love, layout elements you want to keep, etc.</span>
+                    </label>
+                    <textarea id="working" name="working" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="not-working">
+                        What isn't working?
+                        <span>What frustrates you about the room? What feels off?</span>
+                    </label>
+                    <textarea id="not-working" name="not_working" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="style">
+                        Describe your style
+                        <span>You can also link to Pinterest boards or images you like.</span>
+                    </label>
+                    <textarea id="style" name="style" placeholder="e.g., warm and minimal, mid-century with plants, cozy and layered..." required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        Photos of your space
+                        <span>Upload several angles. More is better.</span>
+                    </label>
+                    <div class="file-upload">
+                        <input type="file" id="photos" name="photos" multiple accept="image/*">
+                        <div class="file-upload-label">
+                            <strong>Click to upload photos</strong>
+                            or drag and drop
+                        </div>
+                        <div class="file-names" id="fileNames"></div>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-button">Submit & Continue to Payment</button>
+
+                <div class="form-note">
+                    After submitting, you'll be directed to complete payment. Your project begins once payment is received.
+                </div>
+            </form>
+
+            <div class="confirmation" id="confirmation">
+                <h2>Thank you!</h2>
+                <p>Your information has been received.</p>
+                <div class="important">
+                    To begin your One Room Refresh, please complete your payment of <strong>$100</strong>. Your project will start within one business day of payment.
+                </div>
+                <a href="https://paypal.me/YOURLINK" class="payment-button" id="paymentLink">Pay $100</a>
+                <p style="margin-top: 32px; font-size: 0.85rem;">Questions? Email <a href="mailto:hello@styledbysoovly.com" style="color: var(--color-sage);">hello@styledbysoovly.com</a></p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 Styled by Soovly</p>
+        </div>
+    </footer>
+
+    <script>
+        // Display selected file names
+        document.getElementById('photos').addEventListener('change', function(e) {
+            const fileNames = Array.from(e.target.files).map(f => f.name).join(', ');
+            document.getElementById('fileNames').textContent = fileNames || '';
+        });
+
+        // Handle form submission
+        document.getElementById('intakeForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const form = this;
+            const formData = new FormData(form);
+            
+            // Submit to Formspree (or your form handler)
+            fetch(form.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            }).then(response => {
+                if (response.ok) {
+                    // Show confirmation
+                    form.classList.add('hidden');
+                    document.getElementById('confirmation').classList.add('active');
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                } else {
+                    alert('There was a problem submitting the form. Please try again.');
+                }
+            }).catch(error => {
+                alert('There was a problem submitting the form. Please try again.');
+            });
+        });
+    </script>
+</body>
+</html>

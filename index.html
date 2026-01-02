@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styled by Soovly | Online Interior Styling</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-cream: #F9F7F4;
+            --color-warm-white: #FFFEFB;
+            --color-charcoal: #2C2C2C;
+            --color-sage: #8B9A7D;
+            --color-sage-light: #A8B89A;
+            --color-taupe: #9C8E84;
+            --color-text: #3D3D3D;
+            --color-text-light: #6B6B6B;
+            --font-display: 'Cormorant Garamond', Georgia, serif;
+            --font-body: 'Outfit', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            font-weight: 300;
+            background-color: var(--color-cream);
+            color: var(--color-text);
+            line-height: 1.7;
+            font-size: 16px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header */
+        header {
+            padding: 40px 0;
+            border-bottom: 1px solid rgba(0,0,0,0.06);
+        }
+
+        .logo {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: var(--color-charcoal);
+            letter-spacing: 0.02em;
+        }
+
+        /* Hero */
+        .hero {
+            padding: 100px 0 120px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 400;
+            color: var(--color-charcoal);
+            line-height: 1.2;
+            margin-bottom: 28px;
+            letter-spacing: -0.01em;
+        }
+
+        .hero h1 em {
+            font-style: italic;
+            color: var(--color-sage);
+        }
+
+        .hero .tagline {
+            font-size: 1.15rem;
+            color: var(--color-text-light);
+            max-width: 520px;
+            margin: 0 auto 48px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--color-charcoal);
+            color: var(--color-warm-white);
+            padding: 16px 40px;
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            font-weight: 400;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .cta-button:hover {
+            background-color: var(--color-sage);
+            transform: translateY(-2px);
+        }
+
+        /* Portfolio Grid */
+        .portfolio {
+            padding: 80px 0;
+            background-color: var(--color-warm-white);
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .portfolio-item {
+            aspect-ratio: 4/5;
+            background-color: var(--color-cream);
+            border: 1px solid rgba(0,0,0,0.04);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-taupe);
+            font-size: 0.85rem;
+            letter-spacing: 0.05em;
+            overflow: hidden;
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Service Section */
+        .service {
+            padding: 100px 0;
+        }
+
+        .service-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .service-header h2 {
+            font-family: var(--font-display);
+            font-size: 2.2rem;
+            font-weight: 400;
+            color: var(--color-charcoal);
+            margin-bottom: 16px;
+        }
+
+        .service-header p {
+            color: var(--color-text-light);
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background-color: var(--color-warm-white);
+            border: 1px solid rgba(0,0,0,0.06);
+            padding: 60px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .service-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            font-weight: 500;
+            color: var(--color-charcoal);
+            margin-bottom: 8px;
+        }
+
+        .service-card .price {
+            font-size: 1.5rem;
+            color: var(--color-sage);
+            margin-bottom: 32px;
+            font-weight: 400;
+        }
+
+        .service-description {
+            margin-bottom: 32px;
+        }
+
+        .service-description p {
+            margin-bottom: 16px;
+            color: var(--color-text);
+        }
+
+        .service-description p:last-child {
+            margin-bottom: 0;
+        }
+
+        .service-includes {
+            background-color: var(--color-cream);
+            padding: 28px 32px;
+            margin-bottom: 40px;
+        }
+
+        .service-includes h4 {
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: var(--color-charcoal);
+        }
+
+        .service-includes p {
+            color: var(--color-text);
+            font-size: 0.95rem;
+        }
+
+        .revision-note {
+            font-size: 0.9rem;
+            color: var(--color-text-light);
+            padding-top: 24px;
+            border-top: 1px solid rgba(0,0,0,0.06);
+        }
+
+        /* How It Works */
+        .process {
+            padding: 80px 0 100px;
+            background-color: var(--color-warm-white);
+        }
+
+        .process h2 {
+            font-family: var(--font-display);
+            font-size: 2.2rem;
+            font-weight: 400;
+            color: var(--color-charcoal);
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 48px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .step {
+            text-align: center;
+        }
+
+        .step-number {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            color: var(--color-sage-light);
+            margin-bottom: 16px;
+            font-weight: 400;
+        }
+
+        .step h3 {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            font-weight: 500;
+            color: var(--color-charcoal);
+            margin-bottom: 12px;
+        }
+
+        .step p {
+            font-size: 0.95rem;
+            color: var(--color-text-light);
+        }
+
+        /* Contact */
+        .contact {
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-family: var(--font-display);
+            font-size: 2.2rem;
+            font-weight: 400;
+            color: var(--color-charcoal);
+            margin-bottom: 20px;
+        }
+
+        .contact p {
+            color: var(--color-text-light);
+            margin-bottom: 36px;
+        }
+
+        .contact-email {
+            font-family: var(--font-display);
+            font-size: 1.4rem;
+            color: var(--color-sage);
+            text-decoration: none;
+            border-bottom: 1px solid var(--color-sage-light);
+            padding-bottom: 4px;
+            transition: color 0.3s ease;
+        }
+
+        .contact-email:hover {
+            color: var(--color-charcoal);
+        }
+
+        /* Footer */
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid rgba(0,0,0,0.06);
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 0.85rem;
+            color: var(--color-text-light);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .portfolio-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .process-steps {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .service-card {
+                padding: 40px 28px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">Styled by Soovly</div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Your space, <em>thoughtfully styled</em></h1>
+            <p class="tagline">Online interior styling for people who want a better home but don't know where to start.</p>
+            <a href="form.html" class="cta-button">Get Started</a>
+        </div>
+    </section>
+
+    <section class="portfolio">
+        <div class="container">
+            <div class="portfolio-grid">
+                <div class="portfolio-item">Photo 1</div>
+                <div class="portfolio-item">Photo 2</div>
+                <div class="portfolio-item">Photo 3</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="service">
+        <div class="container">
+            <div class="service-header">
+                <h2>The Service</h2>
+                <p>A straightforward way to transform any room without the guesswork.</p>
+            </div>
+            <div class="service-card">
+                <h3>One Room Refresh</h3>
+                <div class="price">$100</div>
+                <div class="service-description">
+                    <p>Submit photos of your space along with a short questionnaire about your budget, style preferences, and what's not working. Within five business days, you'll receive a personalized mood board and a curated list of product recommendations with direct purchase links.</p>
+                </div>
+                <div class="service-includes">
+                    <h4>What's included</h4>
+                    <p>Personalized mood board, curated product list with links, and one round of revisions at no extra cost. Additional revisions are available for $50 each.</p>
+                </div>
+                <p class="revision-note">Everything is delivered via email. No calls, no appointments.</p>
+                <a href="form.html" class="cta-button" style="display: inline-block; margin-top: 32px;">Get Started</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="process">
+        <div class="container">
+            <h2>How It Works</h2>
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Share your space</h3>
+                    <p>Send photos and fill out a brief questionnaire about your room, budget, and style.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Receive your plan</h3>
+                    <p>Within five business days, get a mood board and product recommendations in your inbox.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Make it yours</h3>
+                    <p>Shop the links, arrange your pieces, and enjoy your refreshed space.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2>Questions?</h2>
+            <p>Feel free to reach out before booking.</p>
+            <a href="mailto:hello@styledbysoovly.com" class="contact-email">hello@styledbysoovly.com</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 Styled by Soovly</p>
+        </div>
+    </footer>
+</body>
+</html>
